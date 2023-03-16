@@ -36,7 +36,7 @@ class LaravelFileGeneratorCommand extends Command
                 $this->call(ServiceClassGeneratorCommand::class, ['name' => $name]);
                 break;
             case FileTypesEnum::REPOSITORY:
-                $this->call(RepositoryInterfaceClassGeneratorCommand::class, ['name' => $name . 'Interface']);
+                $this->call(RepositoryInterfaceClassGeneratorCommand::class, ['name' => $name.'Interface']);
                 $this->call(RepositoryClassGeneratorCommand::class, ['name' => $name]);
                 break;
             default:
