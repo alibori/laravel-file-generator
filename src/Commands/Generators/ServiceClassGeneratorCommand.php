@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Alibori\LaravelFileGenerator\Commands\Generators;
 
 use Illuminate\Console\GeneratorCommand;
@@ -10,11 +12,13 @@ class ServiceClassGeneratorCommand extends GeneratorCommand
 
     protected $description = 'Create a new service class';
 
-    protected $type = 'Foo';
-
     protected function getStub(): string
     {
-        return __DIR__ . '../..../resources/stubs/service.php.stub';
+        if (file_exists(base_path('stubs/laravel-file-generator/service.php.stub'))) {
+            return base_path('stubs/laravel-file-generator/service.php.stub');
+        }
+
+        return __DIR__.'/stubs/service.php.stub';
     }
 
     protected function getDefaultNamespace($rootNamespace): string
@@ -22,14 +26,16 @@ class ServiceClassGeneratorCommand extends GeneratorCommand
         return config('file-generator.service.namespace');
     }
 
-    public function handle()
+    public function handle(): bool
     {
         parent::handle();
 
         $this->doOtherOperations();
+
+        return true;
     }
 
-    protected function doOtherOperations()
+    protected function doOtherOperations(): void
     {
         // Get the fully qualified class name (FQN)
         $class = $this->qualifyClass($this->getNameInput());
@@ -40,7 +46,6 @@ class ServiceClassGeneratorCommand extends GeneratorCommand
         $content = file_get_contents($path);
 
         // Update the file content with additional data (regular expressions)
-
         file_put_contents($path, $content);
     }
 }

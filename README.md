@@ -18,28 +18,45 @@ composer require alibori/laravel-file-generator
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-file-generator-config"
+php artisan vendor:publish --tag="file-generator-config"
 ```
 
 This is the contents of the published config file:
 
 ```php
 return [
+    /**
+     * Part that contains the info for the Service classes
+     */
+    'service' => [
+        /**
+         * The path where the Service classes will be created
+         */
+        'path' => app_path('Services'),
+
+        /**
+         * The namespace of the Service classes
+         */
+        'namespace' => 'App\Services',
+    ],
 ];
 ```
 
 Optionally, you can publish the stubs using
 
 ```bash
-php artisan vendor:publish --tag="laravel-file-generator-stubs"
+php artisan vendor:publish --tag="file-generator-stubs"
 ```
 
 ## Usage
 
 ```php
-$laravelFileGenerator = new Alibori\LaravelFileGenerator();
-echo $laravelFileGenerator->echoPhrase('Hello, Alibori!');
+php artisan laravel-file-generator:generate {type} {name}
 ```
+
+### Available types
+
+- `service`
 
 ## Testing
 

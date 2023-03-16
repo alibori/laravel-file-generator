@@ -13,7 +13,7 @@ it('cannot call command with invalid file type', function (): void {
 });
 
 it('cannot call command without name', function (): void {
-    $this->artisan(LaravelFileGeneratorCommand::class, ['type' => FileTypesEnum::service, 'name' => ''])
+    $this->artisan(LaravelFileGeneratorCommand::class, ['type' => FileTypesEnum::SERVICE, 'name' => ''])
         ->expectsOutput('You must provide a name')
         ->assertExitCode(CommandAlias::FAILURE);
 });

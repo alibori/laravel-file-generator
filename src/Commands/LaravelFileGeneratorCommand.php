@@ -30,7 +30,7 @@ class LaravelFileGeneratorCommand extends Command
         }
 
         switch ($type) {
-            case FileTypesEnum::service:
+            case FileTypesEnum::SERVICE:
                 $this->call(ServiceClassGeneratorCommand::class, ['name' => $name]);
                 break;
             default:

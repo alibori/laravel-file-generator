@@ -6,5 +6,5 @@ namespace Alibori\LaravelFileGenerator\Enums;
 
 enum FileTypesEnum
 {
-    case service;
+    public const SERVICE = 'service';
 }

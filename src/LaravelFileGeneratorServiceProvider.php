@@ -23,7 +23,7 @@ class LaravelFileGeneratorServiceProvider extends PackageServiceProvider
     public function packageRegistered(): void
     {
         $this->publishes([
-            __DIR__.'/../resources/stubs/' => app_path('stubs/laravel-file-generator'),
-        ], 'laravel-file-generator-stubs');
+            __DIR__.'/../resources/stubs/' => base_path('stubs/laravel-file-generator'),
+        ], 'file-generator-stubs');
     }
 }
