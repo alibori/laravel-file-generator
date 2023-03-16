@@ -35,7 +35,7 @@ class ServiceClassGeneratorCommand extends GeneratorCommand
         return true;
     }
 
-    protected function doOtherOperations()
+    protected function doOtherOperations(): void
     {
         // Get the fully qualified class name (FQN)
         $class = $this->qualifyClass($this->getNameInput());
