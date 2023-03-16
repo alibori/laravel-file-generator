@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Alibori\LaravelFileGenerator\Commands\Generators;
 
 use Illuminate\Console\GeneratorCommand;
@@ -14,7 +16,7 @@ class ServiceClassGeneratorCommand extends GeneratorCommand
 
     protected function getStub(): string
     {
-        return __DIR__ . '../..../resources/stubs/service.php.stub';
+        return __DIR__.'../..../resources/stubs/service.php.stub';
     }
 
     protected function getDefaultNamespace($rootNamespace): string
@@ -22,14 +24,14 @@ class ServiceClassGeneratorCommand extends GeneratorCommand
         return config('file-generator.service.namespace');
     }
 
-    public function handle()
+    public function handle(): void
     {
         parent::handle();
 
         $this->doOtherOperations();
     }
 
-    protected function doOtherOperations()
+    protected function doOtherOperations(): void
     {
         // Get the fully qualified class name (FQN)
         $class = $this->qualifyClass($this->getNameInput());
