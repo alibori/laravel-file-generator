@@ -6,36 +6,36 @@ namespace Alibori\LaravelFileGenerator\Commands\Generators;
 
 use Illuminate\Console\GeneratorCommand;
 
-class ServiceClassGeneratorCommand extends GeneratorCommand
+class RepositoryClassGeneratorCommand extends GeneratorCommand
 {
-    protected $name = 'make:service';
+    protected $name = 'make:repository-class';
 
-    protected $description = 'Create a new service class';
+    protected $description = 'Create a new repository class';
 
     protected function getStub(): string
     {
-        if (file_exists(base_path('stubs/laravel-file-generator/service.php.stub'))) {
-            return base_path('stubs/laravel-file-generator/service.php.stub');
+        if (file_exists(base_path('stubs/laravel-file-generator/repository.php.stub'))) {
+            return base_path('stubs/laravel-file-generator/repository.php.stub');
         }
 
-        return __DIR__.'/stubs/service.php.stub';
+        return __DIR__.'/stubs/repository.php.stub';
     }
 
     protected function getDefaultNamespace($rootNamespace): string
     {
-        return config('file-generator.service.namespace');
+        return config('file-generator.repository.namespace');
     }
 
     public function handle(): bool
     {
         parent::handle();
 
-        $this->generateService();
+        $this->generateRepository();
 
         return true;
     }
 
-    protected function generateService(): void
+    protected function generateRepository(): void
     {
         // Get the fully qualified class name (FQN)
         $class = $this->qualifyClass($this->getNameInput());

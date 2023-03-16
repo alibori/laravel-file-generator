@@ -18,4 +18,19 @@ return [
          */
         'namespace' => 'App\Services',
     ],
+
+    /**
+     * Part that contains the info for the Repository classes
+     */
+    'repository' => [
+        /**
+         * The path where the Repository classes will be created
+         */
+        'path' => app_path('Repositories'),
+
+        /**
+         * The namespace of the Repository classes
+         */
+        'namespace' => 'App\Repositories',
+    ],
 ];

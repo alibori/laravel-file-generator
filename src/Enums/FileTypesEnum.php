@@ -7,4 +7,5 @@ namespace Alibori\LaravelFileGenerator\Enums;
 enum FileTypesEnum
 {
     public const SERVICE = 'service';
+    public const REPOSITORY = 'repository';
 }

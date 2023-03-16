@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Alibori\LaravelFileGenerator\Commands;
 
+use Alibori\LaravelFileGenerator\Commands\Generators\RepositoryClassGeneratorCommand;
+use Alibori\LaravelFileGenerator\Commands\Generators\RepositoryInterfaceClassGeneratorCommand;
 use Alibori\LaravelFileGenerator\Commands\Generators\ServiceClassGeneratorCommand;
 use Alibori\LaravelFileGenerator\Enums\FileTypesEnum;
 use Illuminate\Console\Command;
@@ -32,6 +34,10 @@ class LaravelFileGeneratorCommand extends Command
         switch ($type) {
             case FileTypesEnum::SERVICE:
                 $this->call(ServiceClassGeneratorCommand::class, ['name' => $name]);
+                break;
+            case FileTypesEnum::REPOSITORY:
+                $this->call(RepositoryInterfaceClassGeneratorCommand::class, ['name' => $name . 'Interface']);
+                $this->call(RepositoryClassGeneratorCommand::class, ['name' => $name]);
                 break;
             default:
                 $this->error('Invalid type');

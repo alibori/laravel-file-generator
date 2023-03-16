@@ -57,6 +57,7 @@ php artisan laravel-file-generator:generate {type} {name}
 ### Available types
 
 - `service`
+- `repository` (This will make an interface too).
 
 ## Testing
 
