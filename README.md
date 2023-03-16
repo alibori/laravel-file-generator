@@ -1,8 +1,8 @@
 # Laravel File Generator Package
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/alibori/laravel-file-generator.svg?style=flat-square)](https://packagist.org/packages/alibori/laravel-file-generator)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/alibori/laravel-file-generator/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/alibori/laravel-file-generator/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/alibori/laravel-file-generator/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/alibori/laravel-file-generator/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![run-tests](https://github.com/alibori/laravel-file-generator/actions/workflows/run-tests.yml/badge.svg)](https://github.com/alibori/laravel-file-generator/actions/workflows/run-tests.yml)
+[![PHPStan](https://github.com/alibori/laravel-file-generator/actions/workflows/phpstan.yml/badge.svg)](https://github.com/alibori/laravel-file-generator/actions/workflows/phpstan.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/alibori/laravel-file-generator.svg?style=flat-square)](https://packagist.org/packages/alibori/laravel-file-generator)
 
 Package to create custom files that doesn't have default stub.
