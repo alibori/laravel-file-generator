@@ -18,7 +18,7 @@ class LaravelFileGeneratorServiceProvider extends PackageServiceProvider
             ->hasCommand(LaravelFileGeneratorCommand::class);
     }
 
-    public function packageRegistered()
+    public function packageRegistered(): void
     {
         $this->publishes([
             __DIR__.'/../resources/stubs/' => app_path('stubs/laravel-file-generator'),

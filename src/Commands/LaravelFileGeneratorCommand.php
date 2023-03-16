@@ -18,12 +18,12 @@ class LaravelFileGeneratorCommand extends Command
         $type = $this->argument('type');
         $name = $this->argument('name');
 
-        if (!$type) {
+        if ( ! $type) {
             $this->error('You must provide a type');
             return self::FAILURE;
         }
 
-        if (!$name) {
+        if ( ! $name) {
             $this->error('You must provide a name');
             return self::FAILURE;
         }
