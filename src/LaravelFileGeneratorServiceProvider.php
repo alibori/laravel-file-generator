@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Alibori\LaravelFileGenerator;
 
+use Alibori\LaravelFileGenerator\Commands\Generators\ServiceClassGeneratorCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Alibori\LaravelFileGenerator\Commands\LaravelFileGeneratorCommand;
@@ -14,8 +15,9 @@ class LaravelFileGeneratorServiceProvider extends PackageServiceProvider
     {
         $package
             ->name('laravel-file-generator')
-            ->hasConfigFile()
-            ->hasCommand(LaravelFileGeneratorCommand::class);
+            ->hasConfigFile('file-generator')
+            ->hasCommand(LaravelFileGeneratorCommand::class)
+            ->hasCommands(ServiceClassGeneratorCommand::class);
     }
 
     public function packageRegistered(): void
