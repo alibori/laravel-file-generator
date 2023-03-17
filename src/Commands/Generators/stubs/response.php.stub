@@ -1,0 +1,12 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use Illuminate\Contracts\Support\Responsable;
+
+final class {{ class }} implements Responsable
+{
+    //
+}

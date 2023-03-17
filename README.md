@@ -21,27 +21,6 @@ You can publish the config file with:
 php artisan vendor:publish --tag="file-generator-config"
 ```
 
-This is the contents of the published config file:
-
-```php
-return [
-    /**
-     * Part that contains the info for the Service classes
-     */
-    'service' => [
-        /**
-         * The path where the Service classes will be created
-         */
-        'path' => app_path('Services'),
-
-        /**
-         * The namespace of the Service classes
-         */
-        'namespace' => 'App\Services',
-    ],
-];
-```
-
 Optionally, you can publish the stubs using
 
 ```bash
@@ -51,13 +30,15 @@ php artisan vendor:publish --tag="file-generator-stubs"
 ## Usage
 
 ```php
-php artisan laravel-file-generator:generate {type} {name}
+php artisan file-generator:generate {type} {name}
 ```
 
 ### Available types
 
 - `service`
 - `repository` (This will make an interface too).
+- `action`
+- `response`
 
 ## Testing
 
@@ -69,10 +50,6 @@ composer test
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
 ## Security Vulnerabilities
 
 Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
@@ -80,7 +57,6 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## Credits
 
 - [Axel Libori Roch](https://github.com/alibori)
-- [All Contributors](../../contributors)
 
 ## License
 

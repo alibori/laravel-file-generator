@@ -33,4 +33,34 @@ return [
          */
         'namespace' => 'App\Repositories',
     ],
+
+    /**
+     * Part that contains the info for the Action classes
+     */
+    'action' => [
+        /**
+         * The path where the Action classes will be created
+         */
+        'path' => app_path('Actions'),
+
+        /**
+         * The namespace of the Action classes
+         */
+        'namespace' => 'App\Actions',
+    ],
+
+    /**
+     * Part that contains the info for the Response classes
+     */
+    'response' => [
+        /**
+         * The path where the Response classes will be created
+         */
+        'path' => app_path('Http/Responses'),
+
+        /**
+         * The namespace of the Response classes
+         */
+        'namespace' => 'App\Http\Responses',
+    ],
 ];
