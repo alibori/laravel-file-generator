@@ -12,7 +12,7 @@ Package to create custom files that doesn't have default stub.
 You can install the package via composer:
 
 ```bash
-composer require alibori/laravel-file-generator
+composer require alibori/laravel-file-generator --dev
 ```
 
 You can publish the config file with:
