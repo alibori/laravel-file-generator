@@ -8,5 +8,8 @@ use Illuminate\Contracts\Support\Responsable;
 
 final class {{ class }} implements Responsable
 {
-    //
+    public function toResponse($request)
+    {
+        // TODO: Implement toResponse() method.
+    }
 }

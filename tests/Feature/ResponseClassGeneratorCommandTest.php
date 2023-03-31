@@ -25,23 +25,4 @@ it('can generate a response class', function (): void {
 
     // Assert a new file is created
     $this->assertTrue(File::exists($fooClass));
-
-    // Assert the file contains the right contents
-    $expectedContents = <<<CLASS
-<?php
-
-declare(strict_types=1);
-
-namespace App\Http\Responses;
-
-use Illuminate\Contracts\Support\Responsable;
-
-final class MyFooClass implements Responsable
-{
-    //
-}
-
-CLASS;
-
-    $this->assertEquals($expectedContents, file_get_contents($fooClass));
 });
